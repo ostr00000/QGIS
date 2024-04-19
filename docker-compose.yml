@@ -1,0 +1,12 @@
+services:
+  qgis-build:
+    build: .
+    image: 'qgis-builder'
+    container_name: 'q-build'
+
+    # Keep container running
+    # https://stackoverflow.com/a/55953120
+    tty: true
+
+    volumes:
+      - .:/QGIS:rw
